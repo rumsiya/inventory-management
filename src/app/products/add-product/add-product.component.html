@@ -1,0 +1,53 @@
+<div class="flex p-2 w-[500px] h-32 mt-2 ml-2 mr-2 shadow rounded" style="background: #68ff682e;">
+
+  <div class="flex flex-col">
+      <h1 class="font-semibold">Add Product</h1>
+      <form action="" #addProductForm="ngForm" (ngSubmit)="addToProduct(addProductForm)">
+        <div class="grid grid-cols-8 gap-8 mt-2 mb-2">
+          <div class="flex flex-col">
+            <label for="">Product Name</label>
+            <input type="text" name="product_name" [(ngModel)]="productData.product_name" #product_name="ngModel" class="w-full p-2 shadow rounded">
+          </div>
+          <div class="flex flex-col">
+            <label for="">Quantity</label>
+            <input type="text" name="quantity" [(ngModel)]="productData.quantity" #quantity="ngModel" class="w-full p-2 shadow rounded">
+          </div>
+          <div class="flex flex-col">
+            <label for="">Unit</label>
+            <mat-select  class="w-full p-2 shadow rounded"  name="unit_id" [(ngModel)]="productData.unit_id" #unit_id="ngModel">
+              <mat-option *ngFor="let u of unit$ | async" [value]="u.id">{{ u.unit_name }}</mat-option>
+            </mat-select>
+          </div>
+          <div class="flex flex-col">
+            <label for="">Price</label>
+            <input type="text" name="price" [(ngModel)]="productData.price" #price="ngModel" class="w-full p-2 shadow rounded">
+          </div>
+
+          <div class="flex flex-col">
+            <label for="">Category</label>
+            <mat-select  class="w-full p-2 shadow rounded"  name="category_id" [(ngModel)]="productData.category_id" #category_id="ngModel">
+              <mat-option *ngFor="let c of categories$ | async" [value]="c.id">{{ c.category_name }}</mat-option>
+            </mat-select>
+          </div>
+
+          <div class="flex flex-col">
+            <label for="">Supplier</label>
+            <mat-select  class="w-full p-2 shadow rounded"  name="supplier_id" [(ngModel)]="productData.supplier_id" #supplier_id="ngModel">
+              <mat-option *ngFor="let s of supplier$ | async" [value]="s.id">{{ s.supplier_name }}</mat-option>
+            </mat-select>
+          </div>
+          <div class="flex flex-col">
+            <label for="">Photo</label>
+            <input type="file" name="image" (change)="onChangeImage($event)" class="w-full p-2 shadow rounded">
+
+          </div>
+
+          <div class="mt-4">
+            <button type="submit" class="p-2 bg-green-600 text-white shadow rounded " *ngIf="!editProductFlag">Add</button>
+            <button type="submit" class="p-2 bg-green-600 text-white shadow rounded " *ngIf="editProductFlag">Update</button>
+          </div>
+        </div>
+    </form>
+
+  </div>
+<div>

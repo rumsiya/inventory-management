@@ -1,0 +1,42 @@
+<div class="flex p-2 w-[500px] h-32 mt-2 ml-2 mr-2 shadow rounded" style="background: #68ff682e;">
+
+<div class="flex flex-col">
+    <h1 class="font-semibold">Add User</h1>
+    <form action="" #addForm="ngForm" (ngSubmit)="register(addForm)">
+      <div class="grid grid-cols-7 gap-7 mt-2">
+        <div class="flex flex-col">
+          <label for="">Username</label>
+          <input type="text" name="name" [(ngModel)]="registerData.name" #name="ngModel" class="w-full p-2 shadow rounded">
+        </div>
+        <div class="flex flex-col">
+          <label for="">Email</label>
+          <input type="email" name="email"  [(ngModel)]="registerData.email" #email="ngModel" class="w-full p-2 shadow rounded">
+        </div>
+        <div class="flex flex-col">
+          <label for="">Password</label>
+          <input type="password" name="password"  [(ngModel)]="registerData.password" #password="ngModel" class="w-full p-2 shadow rounded">
+        </div>
+        <div class="flex flex-col">
+          <label for="">Confirm Password</label>
+          <input type="password" name="cpass"  [(ngModel)]="registerData.cpass" #cpass="ngModel" class="w-full p-2 shadow rounded">
+        </div>
+        <div class="flex flex-col">
+          <mat-form-field class="w-full border-black shadow rounded bg-white">
+            <mat-label class="text-black">Role</mat-label>
+              <mat-select name="role" [(ngModel)]="registerData.role" #role="ngModel">
+                <mat-option value="1">Admin</mat-option>
+                <mat-option value="2">User</mat-option>
+              </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="flex flex-col">
+          <label for="">Phone</label>
+          <input type="text" name="phone"  [(ngModel)]="registerData.phone" #phone="ngModel" class="w-full p-2 shadow rounded">
+        </div>
+        <div class="mt-6">
+          <button type="submit" class="p-2 bg-green-600 text-white shadow rounded">Register</button>
+        </div>
+      </div>
+  </form>
+  </div>
+</div>

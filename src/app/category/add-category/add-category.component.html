@@ -1,0 +1,19 @@
+<div class="flex p-2 w-[500px] h-32 mt-2 ml-2 mr-2 shadow rounded" style="background: #68ff682e;">
+
+  <div class="flex flex-col">
+      <h1 class="font-semibold">Add Category</h1>
+      <form action="" #addCatForm="ngForm" (ngSubmit)="addToCategory(addCatForm)">
+        <div class="grid grid-cols-7 gap-7 mt-2 mb-2">
+          <div class="flex flex-col">
+            <label for="">Category Name</label>
+            <input type="text" name="category_name" [(ngModel)]="categoryData.category_name" #name="ngModel" class="w-full p-2 shadow rounded">
+          </div>
+          <div class="mt-4">
+            <button type="submit" class="p-2 bg-green-600 text-white shadow rounded " *ngIf="!editCatFlag">Add</button>
+            <button type="submit" class="p-2 bg-green-600 text-white shadow rounded " *ngIf="editCatFlag">Update</button>
+          </div>
+        </div>
+    </form>
+
+  </div>
+<div>

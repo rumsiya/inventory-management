@@ -1,0 +1,50 @@
+<nav class="flex w-full h-16 items-center justify-between bg-green-600">
+  <div class="text-white">
+    <h1 class="font-bold ml-2">Inventory Management</h1>
+  </div>
+
+  <div class="flex p-2 ml-auto">
+    <ul class="flex text-white space-x-4">
+
+      <!-- USERS -->
+      <li class="relative group cursor-pointer">
+        <span class="px-2 py-1 inline-block">Users</span>
+
+        <ul
+          class="absolute left-0 top-full w-36
+                 bg-white text-black rounded shadow-lg
+                 invisible opacity-0
+                 group-hover:visible group-hover:opacity-100
+                 transition duration-200 z-50">
+
+          <li class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Add User</li>
+          <li class="px-4 py-2 hover:bg-gray-100 cursor-pointer" [routerLink]="['/users']">User List</li>
+          <li class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Roles</li>
+          <li class="px-4 py-2 hover:bg-gray-100 cursor-pointer" [routerLink]="['/suppliers']">Suppliers</li>
+
+        </ul>
+      </li>
+
+      <!-- PRODUCTS -->
+      <li class="relative group cursor-pointer">
+        <span class="px-2 py-1 inline-block">Products</span>
+
+        <ul
+          class="absolute left-0 top-full w-40
+                 bg-white text-black rounded shadow-lg
+                 invisible opacity-0
+                 group-hover:visible group-hover:opacity-100
+                 transition duration-200 z-50">
+          <li class="px-4 py-2 hover:bg-gray-100 cursor-pointer" [routerLink]="['/categories']">Category</li>
+          <li class="px-4 py-2 hover:bg-gray-100 cursor-pointer" [routerLink]="['/products']">Products List</li>
+          <li class="px-4 py-2 hover:bg-gray-100 cursor-pointer" [routerLink]="['/units']">Units</li>
+
+        </ul>
+      </li>
+
+      <li class="px-2 py-1 cursor-pointer" [routerLink]="['/stocks']">Stock Transactions</li>
+      <li class="px-2 py-1">Suppliers</li>
+
+    </ul>
+  </div>
+</nav>

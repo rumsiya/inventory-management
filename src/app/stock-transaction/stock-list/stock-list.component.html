@@ -1,0 +1,71 @@
+<app-header></app-header>
+<app-add-stock></app-add-stock>
+<div class="flex p-2 w-[500px] h-32 mt-2 ml-2 mr-2 shadow rounded" style="background: #68ff682e;">
+  <table mat-table class="mat-elevation-z8 w-full" [dataSource]="dataSource"   *ngIf="dataSource.data.length > 0; else noData"
+>
+    <ng-container matColumnDef="no">
+      <th mat-header-cell *matHeaderCellDef>No.</th>
+      <td mat-cell *matCellDef="let i=index;">{{ i+1 }}</td>
+    </ng-container>
+    <ng-container matColumnDef="stock_id">
+      <th mat-header-cell *matHeaderCellDef>Stock No.
+        <input type="text" name="stock_id" (keyup)="applyFilter('stock_id',$event)" id="">
+      </th>
+      <td mat-cell *matCellDef="let row;">{{ row.stock_id }}</td>
+    </ng-container>
+    <ng-container matColumnDef="product_name">
+      <th mat-header-cell *matHeaderCellDef>Product Name
+      <input type="text" name="product_name" (keyup)="applyFilter('product_name',$event)" id="">
+
+      </th>
+      <td mat-cell *matCellDef="let row;">{{ row.get_product.product_name }}</td>
+    </ng-container>
+    <ng-container matColumnDef="type">
+      <th mat-header-cell *matHeaderCellDef>Type
+        <mat-select name="type" (selectionChange)="applyFilter('type',$event)">
+          <mat-option value="">Types</mat-option>
+          <mat-option value="IN">IN</mat-option>
+          <mat-option value="OUT">OUT</mat-option>
+        </mat-select>
+      </th>
+      <td mat-cell *matCellDef="let row;">{{ row.type }}</td>
+    </ng-container>
+    <ng-container matColumnDef="quantity">
+      <th mat-header-cell *matHeaderCellDef>Quantity
+        <input type="text" name="quantity" (keyup)="applyFilter('quantity',$event)" >
+
+      </th>
+      <td mat-cell *matCellDef="let row;">{{ row.quantity }}</td>
+    </ng-container>
+    <ng-container matColumnDef="unit">
+      <th mat-header-cell *matHeaderCellDef>Unit
+        <mat-select name="unit_id" (selectionChange)="applyFilter('unit_id',$event)"  class="w-full shadow border p-2">
+              <mat-option [value]="0">Select Unit</mat-option>
+              <mat-option *ngFor="let u of unit$ | async" [value]="u.id">{{ u.unit_name }}</mat-option>
+        </mat-select>
+      </th>
+      <td mat-cell *matCellDef="let row;">{{ row.get_unit.unit_name }}</td>
+    </ng-container>
+    <ng-container matColumnDef="price">
+      <th mat-header-cell *matHeaderCellDef>Price</th>
+      <td mat-cell *matCellDef="let row;">{{ row.price }}</td>
+    </ng-container>
+
+
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row;columns:displayedColumns"></tr>
+
+
+  </table>
+   <ng-template #noData>
+      <div class="p-4 text-center text-gray-500">
+        No records found
+      </div>
+    </ng-template>
+
+</div>
+      <mat-paginator [pageSizeOptions]="[5,10]" [pageSize]="3"></mat-paginator>
+
+
+

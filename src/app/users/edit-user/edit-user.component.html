@@ -1,0 +1,28 @@
+<div class=" p-2 h-60 shadow rounded" style="background: #68ff682e;">
+  <h1>Edit User # {{ users.id }} </h1>
+  <form action="" #editForm="ngForm" (ngSubmit)="update(editForm)">
+  <div class="grid grid-cols-2 gap-2">
+    <input type="hidden" name="id"  [(ngModel)]="editFormData.id" #id="ngModel">
+    <div class="flex flex-col">
+      <label for="user">Username</label>
+      <input type="text" name="name" [(ngModel)]="editFormData.name" #name="ngModel" class="w-full p-2 shadow rounded">
+    </div>
+    <div class="flex flex-col">
+      <label for="name">Email</label>
+      <input type="text" name="email" [(ngModel)]="editFormData.email" #email="ngModel" class="w-full p-2 shadow rounded">
+    </div>
+    <div class="flex flex-col">
+      <label for="role">Role</label>
+      <mat-select name="role" [(ngModel)]="editFormData.role" #role="ngModel" class="w-full p-2 shadow rounded">
+        <mat-option [value]="1">Admin</mat-option>
+        <mat-option [value]="2">User</mat-option>
+      </mat-select>
+    </div>
+    <div class="flex flex-col">
+      <label for="name">Phone</label>
+      <input type="text" name="phone" [(ngModel)]="editFormData.phone" #phone="ngModel" class="w-full p-2 shadow rounded">
+    </div>
+  </div>
+  <button type="submit" class="p-2 w-full bg-green-600 text-white mt-4 shadow rounded mb-2">Update</button>
+  </form>
+</div>

@@ -1,0 +1,46 @@
+<div class="flex p-2 w-[500px] h-38 mt-2 ml-2 mr-2  shadow rounded" style="background: #68ff682e;">
+
+  <div class="flex flex-col">
+      <h1 class="font-semibold">Add Category</h1>
+      <form action="" #addStockForm="ngForm" (ngSubmit)="addToStock(addStockForm)">
+        <div class="grid grid-cols-5 gap-5 mt-2 mb-2">
+          <div class="flex flex-col">
+            <label for="">Product Name</label>
+            <mat-select name="product_id" [(ngModel)]="stockData.product_id" #product_id="ngModel" (selectionChange)="productChange($event)" class="w-full shadow border p-2">
+              <mat-option [value]="0">Select Product</mat-option>
+              <mat-option *ngFor="let p of prod$ | async" [value]="p.id">{{ p.product_name }}</mat-option>
+            </mat-select>
+          </div>
+          <div class="flex flex-col">
+            <label for="">Type Of Transaction</label>
+            <mat-select name="type" [(ngModel)]="stockData.type" #type="ngModel" class="w-full shadow border p-2" (selectionChange)="typeChange($event)">
+              <mat-option [value]="0">Select Type</mat-option>
+              <mat-option value="IN">IN</mat-option>
+              <mat-option value="OUT">OUT</mat-option>
+
+            </mat-select>
+          </div>
+          <div class="flex flex-col">
+            <label for="">Quantity</label>
+            <input type="number" name="quantity" [(ngModel)]="stockData.quantity" #quantity="ngModel" (blur)="changeQty()" class="w-full p-2 shadow rounded">
+            <p class="text-red-600" *ngIf="quantityLimit && !outOfStock">Items Left {{ quantityLimit }}</p>
+            <p class="text-red-600" *ngIf="outOfStock">Out of stock</p>
+
+
+          </div>
+
+           <div class="flex flex-col">
+            <label for="">Unit</label>
+            <mat-select name="unit_id" [(ngModel)]="stockData.unit_id" #unit_id="ngModel" class="w-full shadow border p-2">
+              <mat-option [value]="0">Select Unit</mat-option>
+              <mat-option *ngFor="let u of unit$ | async" [value]="u.id">{{ u.unit_name }}</mat-option>
+            </mat-select>
+          </div>
+          <div class="mt-4">
+            <button type="submit" class="p-2 bg-green-600 text-white shadow rounded " >Add</button>
+          </div>
+        </div>
+    </form>
+
+  </div>
+<div>
