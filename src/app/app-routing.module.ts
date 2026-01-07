@@ -8,6 +8,7 @@ import { CategoryListComponent } from './category/category-list/category-list.co
 import { UnitListComponent } from './units/unit-list/unit-list.component';
 import { SupplierListComponent } from './suppliers/supplier-list/supplier-list.component';
 import { StockListComponent } from './stock-transaction/stock-list/stock-list.component';
+import { ReportsComponent } from './stock-transaction/reports/reports.component';
 
 const routes: Routes = [
   { path:'login', component:LoginComponent},
@@ -18,7 +19,8 @@ const routes: Routes = [
   { path:'categories', component:CategoryListComponent},
   { path:'units', component:UnitListComponent},
   { path:'suppliers', component:SupplierListComponent},
-  { path:'stocks', component:StockListComponent}
+  { path:'stocks', component:StockListComponent},
+  { path:'reports' ,component:ReportsComponent}
 
 
 

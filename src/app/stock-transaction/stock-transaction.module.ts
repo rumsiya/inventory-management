@@ -8,6 +8,8 @@ import { FormsModule } from '@angular/forms';
 import { MatSelectModule } from '@angular/material/select';
 import { FilterStockComponent } from './filter-stock/filter-stock.component';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
+import { ReportsComponent } from './reports/reports.component';
+import { NgChartsModule } from 'ng2-charts';
 
 
 
@@ -15,7 +17,8 @@ import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
   declarations: [
     AddStockComponent,
     StockListComponent,
-    FilterStockComponent
+    FilterStockComponent,
+    ReportsComponent
   ],
   imports: [
     CommonModule,
@@ -23,7 +26,8 @@ import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
     MatTableModule,
     FormsModule,
     MatSelectModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    NgChartsModule
   ]
 })
 export class StockTransactionModule { }

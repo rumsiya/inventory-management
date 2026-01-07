@@ -67,7 +67,7 @@ export class AddStockComponent implements OnInit {
   }
 
   changeQty(){
-    if(this.stockData.quantity> this.quantityLimit){
+    if(this.stockData.quantity< this.quantityLimit){
       this.outOfStock = true;
     }else{
             this.outOfStock = false;
