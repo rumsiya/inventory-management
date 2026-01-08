@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   apiUrl : 'http://localhost:8000/api/',
-  cloudImage:'	https://res.cloudinary.com/drl1naxne/image/upload/v1767857179/'
+  cloudImage:'https://res.cloudinary.com/drl1naxne/image/upload/v1767857179/'
 
 };
 
