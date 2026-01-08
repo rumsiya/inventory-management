@@ -80,6 +80,7 @@ export class AddProductComponent implements OnInit {
       formData.append('_method', 'PUT');
 
       this.store.dispatch(editProduct({product:formData,id:data.id}))
+      this.editProductFlag = false;
     }
     this.productData ={}
   }
