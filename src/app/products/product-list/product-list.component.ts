@@ -39,6 +39,9 @@ export class ProductListComponent implements OnInit {
   editProduct(pro:any){
     this.editProductFlag = true;
     this.editProductInput = {...pro}
+    console.log(this.editProductInput)
+        console.log(this.editProductFlag)
+
   }
 
   deleteProduct(pro:any){

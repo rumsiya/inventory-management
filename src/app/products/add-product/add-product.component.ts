@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, SimpleChanges } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { loadCategory } from 'src/app/category/category.action';
@@ -14,7 +14,7 @@ import { addProduct, editProduct } from '../product.action';
   templateUrl: './add-product.component.html',
   styleUrls: ['./add-product.component.scss']
 })
-export class AddProductComponent implements OnInit {
+export class AddProductComponent implements OnInit ,OnChanges{
 
   @Input() editProductFlag:any;
   @Input() editProductInput:any;
@@ -51,7 +51,8 @@ export class AddProductComponent implements OnInit {
   }
 
   ngOnChanges(changes:SimpleChanges){
-    if(this.editProductFlag){
+    if( changes['editProductInput']){
+    this.editProductFlag = true;
 
     this.productData = {...this.editProductInput};
       console.log(this.editProductInput)
@@ -82,7 +83,15 @@ export class AddProductComponent implements OnInit {
       this.store.dispatch(editProduct({product:formData,id:data.id}))
       this.editProductFlag = false;
     }
-    this.productData ={}
+    this.productData = {
+          product_name: '',
+          quantity: 0,
+          price: 0.00,
+          unit_id: 0,
+          supplier_id: 0,
+          category_id: 0,
+          image: ''
+        };
   }
 
   onChangeImage(event:any){
