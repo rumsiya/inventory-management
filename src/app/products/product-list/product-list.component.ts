@@ -13,7 +13,7 @@ import { environment } from 'src/environments/environment';
 })
 export class ProductListComponent implements OnInit {
 
-  public imgUrl = 'https://inventory-management-api-production-edc5.up.railway.app/storage/';
+  public imgUrl = environment.cloudImage ;
 
   editProductFlag:boolean=false;
   editProductInput:any
