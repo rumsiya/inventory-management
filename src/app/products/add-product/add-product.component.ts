@@ -51,13 +51,13 @@ export class AddProductComponent implements OnInit ,OnChanges{
   }
 
   ngOnChanges(changes:SimpleChanges){
-    if( changes['editProductInput']){
-    this.editProductFlag = true;
+    if(  changes['editProductInput']?.currentValue){
+      this.editProductFlag = true;
+      this.productData = {...this.editProductInput};
+    }else{
+      this.editProductFlag = false;
 
-    this.productData = {...this.editProductInput};
-      console.log(this.editProductInput)
     }
-
   }
 
   addToProduct(pro:any){
