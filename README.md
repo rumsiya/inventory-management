@@ -1,27 +1,121 @@
-# InventoryManagement
+📦 Inventory Management System
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.18.
+A full-stack inventory management application built with Angular and Laravel REST API to manage products, suppliers, stock, and reports.
 
-## Development server
+🔗 Live Demo
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Frontend: https://rumsiya.github.io/inventory-management/
 
-## Code scaffolding
+Backend API: https://inventory-management-api-production-edc5.up.railway.app/
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+🔐 Demo Login
+Email: admin@gmail.com
+Password: admin123
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+⚠️ Use demo credentials only.
 
-## Running unit tests
+🛠 Tech Stack
+Frontend
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Angular 12
 
-## Running end-to-end tests
+TypeScript
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Bootstrap
 
-## Further help
+Chart.js
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Backend
+
+Laravel (REST API)
+
+PHP
+
+MySQL
+
+JWT Authentication
+
+Cloudinary (Image Upload)
+
+Deployment
+
+Frontend: GitHub Pages
+
+Backend: Railway
+
+✨ Features
+
+User authentication & authorization
+
+Product, category, supplier CRUD
+
+Stock in / stock out management
+
+Monthly stock reports with charts
+
+Image upload using Cloudinary
+
+RESTful API with validation
+
+Responsive UI
+
+📸 Screenshots
+
+(Add screenshots here — dashboard, product list, reports)
+
+![Dashboard](screenshots/dashboard.png)
+![Products](screenshots/products.png)
+
+
+📌 Screenshots strongly improve interview impact.
+
+⚙️ Installation & Setup
+Backend (Laravel)
+git clone https://github.com/your-username/inventory-management-api.git
+cd inventory-management-api
+composer install
+cp .env.example .env
+php artisan key:generate
+php artisan migrate
+php artisan serve
+
+Frontend (Angular)
+git clone https://github.com/your-username/inventory-management.git
+cd inventory-management
+npm install
+ng serve
+
+
+Navigate to: http://localhost:4200/
+
+📚 What I Learned
+
+Building REST APIs with Laravel
+
+Angular services, guards, and reactive forms
+
+JWT-based authentication
+
+Handling image uploads with Cloudinary
+
+Deploying full-stack apps (Railway + GitHub Pages)
+
+Debugging production and CORS issues
+
+🚀 Future Improvements
+
+Add unit & integration tests
+
+Role-based permissions
+
+Export reports (PDF / Excel)
+
+Improve UI performance
+
+Dockerize backend
+
+👤 Author
+
+Ramsy
+Full-Stack Developer (Angular | Laravel)
