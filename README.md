@@ -22,7 +22,7 @@ Angular 12
 
 TypeScript
 
-Bootstrap
+Tailwind
 
 Chart.js
 
@@ -74,10 +74,6 @@ Responsive UI
 
 
 
-
-
-📌 Screenshots strongly improve interview impact.
-
 ⚙️ Installation & Setup
 Backend (Laravel)
 git clone https://github.com/your-username/inventory-management-api.git
@@ -97,19 +93,6 @@ ng serve
 
 Navigate to: http://localhost:4200/
 
-📚 What I Learned
-
-Building REST APIs with Laravel
-
-Angular services, guards, and reactive forms
-
-JWT-based authentication
-
-Handling image uploads with Cloudinary
-
-Deploying full-stack apps (Railway + GitHub Pages)
-
-Debugging production and CORS issues
 
 🚀 Future Improvements
 
@@ -125,5 +108,5 @@ Dockerize backend
 
 👤 Author
 
-Ramsy
+Rumsy
 Full-Stack Developer (Angular | Laravel)
