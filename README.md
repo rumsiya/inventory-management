@@ -70,7 +70,7 @@ Responsive UI
 ![units](screenshots/units.PNG)
 ![category](screenshots/category.PNG)
 ![supplier](screenshots/supplier.PNG)
-![stock](screenshots/stock.PNG)
+![stock](screenshots/stocks.PNG)
 
 
 
