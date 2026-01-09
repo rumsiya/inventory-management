@@ -64,8 +64,16 @@ Responsive UI
 
 (Add screenshots here — dashboard, product list, reports)
 
-![Dashboard](screenshots/dashboard.png)
-![Products](screenshots/products.png)
+![Login](screenshots/login.PNG)
+![Register](screenshots/register.PNG)
+![Products](screenshots/products.PNG)
+![units](screenshots/units.PNG)
+![category](screenshots/category.PNG)
+![supplier](screenshots/supplier.PNG)
+![stock](screenshots/stock.PNG)
+
+
+
 
 
 📌 Screenshots strongly improve interview impact.
