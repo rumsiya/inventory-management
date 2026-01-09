@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, SimpleChanges } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { addCategory, editCategory } from '../category.action';
 import { Store } from '@ngrx/store';
 
@@ -7,30 +7,33 @@ import { Store } from '@ngrx/store';
   templateUrl: './add-category.component.html',
   styleUrls: ['./add-category.component.scss']
 })
-export class AddCategoryComponent implements OnInit {
+export class AddCategoryComponent implements OnInit,OnChanges {
 
   categoryData:any={
     category_name:''
   }
 
   @Input() categoryInput:any
-  @Input() editCatFlag:boolean=false
+  @Input() editCatFlag:any;
   constructor(
     private store:Store
   ) {
 
   }
 
+  ngOnInit(): void {
+  }
+
   ngOnChanges(changes:SimpleChanges){
-    if(this.editCatFlag){
+    if(changes['categoryInput'].currentValue){
+      this.editCatFlag=true;
       this.categoryData = {...this.categoryInput}
+    }else{
+      this.editCatFlag=false;
     }
   }
 
 
-
-  ngOnInit(): void {
-  }
 
   addToCategory(f:any){
     if(f.valid){
@@ -43,6 +46,7 @@ export class AddCategoryComponent implements OnInit {
       }
 
     }
+    this.editCatFlag = false;
     this.categoryData ={}
   }
 

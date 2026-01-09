@@ -25,8 +25,11 @@ export class AddSupplierComponent implements OnInit {
   }
 
   ngOnChanges(changes:SimpleChanges){
-    if(this.editSupplierFlag){
+    if(changes['supplierInput'].currentValue){
+      this.editSupplierFlag=true;
       this.supplierData = {...this.supplierInput}
+    }else{
+      this.editSupplierFlag=false;
     }
   }
 
@@ -39,6 +42,7 @@ export class AddSupplierComponent implements OnInit {
           this.store.dispatch(editSupplier({supplier:data,id:data.id}))
       }
     }
+    this.editSupplierFlag = false;
     this.supplierData ={}
   }
 }

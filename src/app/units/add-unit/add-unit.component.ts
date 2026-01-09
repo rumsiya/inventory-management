@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, SimpleChanges } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { addUnit, editUnit } from '../unit.action';
 
@@ -7,7 +7,7 @@ import { addUnit, editUnit } from '../unit.action';
   templateUrl: './add-unit.component.html',
   styleUrls: ['./add-unit.component.scss']
 })
-export class AddUnitComponent implements OnInit {
+export class AddUnitComponent implements OnInit,OnChanges {
 
   @Input() editUnitFlag:any;
   @Input() unitInput:any;
@@ -23,8 +23,11 @@ export class AddUnitComponent implements OnInit {
   }
 
   ngOnChanges(changes:SimpleChanges){
-    if(this.editUnitFlag){
+    if(changes['unitInput'].currentValue  ){
+      this.editUnitFlag=true;
       this.unitData = {...this.unitInput}
+    }else{
+      this.editUnitFlag=false;
     }
   }
 
@@ -37,6 +40,7 @@ export class AddUnitComponent implements OnInit {
         console.log(data)
         this.store.dispatch(editUnit({unit:data,id:data.id}))
       }
+      this.editUnitFlag = false;
       this.unitData ={}
     }
   }

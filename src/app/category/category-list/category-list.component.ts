@@ -15,7 +15,7 @@ export class CategoryListComponent implements OnInit {
   displayedColumns : string[] = ['no', 'category_name','action' ]
 
   dataSource = new MatTableDataSource<any>();
-  categoryInput:any = [];
+  categoryInput:any ;
   cate$:Observable<any>
   editCatFlag:boolean = false;
 
@@ -38,7 +38,7 @@ export class CategoryListComponent implements OnInit {
 
   editCat(categ:any){
     this.editCatFlag=true;
-    this.categoryInput = categ;
+    this.categoryInput = {...categ};
 
   }
 
