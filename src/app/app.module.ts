@@ -35,6 +35,9 @@ import { stockReducer } from './stock-transaction/stock.reducer';
 import { StockEffects } from './stock-transaction/stock.effects';
 import { StockTransactionModule } from './stock-transaction/stock-transaction.module';
 import { NgChartsModule } from 'ng2-charts';
+import { RolesModule } from './roles/roles.module';
+import { RoleEffects } from './roles/role.effects';
+import { roleReducer } from './roles/role.reducer';
 
 @NgModule({
   declarations: [
@@ -59,9 +62,10 @@ import { NgChartsModule } from 'ng2-charts';
     UnitsModule,
     SuppliersModule,
     NgChartsModule,
+    RolesModule,
      StockTransactionModule,
-    StoreModule.forRoot({users:userReducer,categories:categoryReducer,units:unitReducer,suppliers:supplierReducer,products:productReducer,stocks:stockReducer}),
-    EffectsModule.forRoot([UserEffects,CategoryEffects,UnitEffects,SupplierEffects,ProductEffects,StockEffects]),
+    StoreModule.forRoot({users:userReducer,categories:categoryReducer,units:unitReducer,suppliers:supplierReducer,products:productReducer,stocks:stockReducer,roles:roleReducer}),
+    EffectsModule.forRoot([UserEffects,CategoryEffects,UnitEffects,SupplierEffects,ProductEffects,StockEffects,RoleEffects]),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production })
   ],
   providers: [

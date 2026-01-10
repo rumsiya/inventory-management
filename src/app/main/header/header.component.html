@@ -17,9 +17,8 @@
                  group-hover:visible group-hover:opacity-100
                  transition duration-200 z-50">
 
-          <li class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Add User</li>
           <li class="px-4 py-2 hover:bg-gray-100 cursor-pointer" [routerLink]="['/users']">User List</li>
-          <li class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Roles</li>
+          <li class="px-4 py-2 hover:bg-gray-100 cursor-pointer" [routerLink]="['/roles']">Roles</li>
           <li class="px-4 py-2 hover:bg-gray-100 cursor-pointer" [routerLink]="['/suppliers']">Suppliers</li>
 
         </ul>
@@ -44,8 +43,7 @@
       </li>
 
       <li class="px-2 py-1 cursor-pointer" [routerLink]="['/stocks']">Stock Transactions</li>
-      <li class="px-2 py-1">Suppliers</li>
-
+      <li class="px-2 py-1 cursor-pointer" (click)="logout()">Logout</li>
     </ul>
   </div>
 </nav>

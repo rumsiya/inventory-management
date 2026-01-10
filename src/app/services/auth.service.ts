@@ -20,6 +20,10 @@ export class AuthService {
     return this.http.post(this.url + 'register', data);
   }
 
+  removeToken(){
+    localStorage.removeItem('token');
+  }
+
   setToken(token:string){
     localStorage.setItem('token',token);
   }
