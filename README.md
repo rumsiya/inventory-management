@@ -66,9 +66,9 @@ Responsive UI
 
 ![Login](screenshots/login.PNG)
 ![Register](screenshots/register.PNG)
-![Products](screenshots/product_list.PNG)
 ![Users](screenshots/user.PNG)
 ![Roles](screenshots/role.PNG)
+![Products](screenshots/product_list.PNG)
 ![Units](screenshots/units.PNG)
 ![Category](screenshots/category.PNG)
 ![Supplier](screenshots/supplier.PNG)
